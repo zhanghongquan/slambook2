@@ -1,6 +1,6 @@
 #include <iostream>
 #include <fstream>
-
+#include<Windows.h>
 using namespace std;
 
 #include <opencv2/core/core.hpp>
@@ -11,7 +11,12 @@ using namespace std;
 #include <Eigen/Geometry>
 #include <boost/format.hpp>  // for formating strings
 
+
 int main(int argc, char **argv) {
+//    if (!SetConsoleOutputCP(CP_UTF8)) {
+//        printf("failed to change code page to UTF8\n");
+//    }
+//    std::locale::global(std::locale("utf8"));
     vector<cv::Mat> colorImgs, depthImgs;    // 彩色图和深度图
     vector<Eigen::Isometry3d> poses;         // 相机位姿
 
@@ -44,13 +49,13 @@ int main(int argc, char **argv) {
     double fy = -480.0;
     double depthScale = 5000.0;
 
-    cout << "正在将图像转换为 Octomap ..." << endl;
+    std::wcout << "converting image to  Octomap ..." << endl;
 
     // octomap tree 
     octomap::OcTree tree(0.01); // 参数为分辨率
 
     for (int i = 0; i < 5; i++) {
-        cout << "转换图像中: " << i + 1 << endl;
+        std::wcout << "converting image : " << i + 1 << endl;
         cv::Mat color = colorImgs[i];
         cv::Mat depth = depthImgs[i];
         Eigen::Isometry3d T = poses[i];

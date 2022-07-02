@@ -4,6 +4,17 @@
 #include <boost/format.hpp>
 #include <fstream>
 #include <opencv2/opencv.hpp>
+
+namespace boost
+{
+#ifdef BOOST_NO_EXCEPTIONS
+    void throw_exception(std::exception const& e) {
+        throw e;
+    };
+#endif
+}// namespace boost
+
+
 using namespace std;
 
 namespace myslam {

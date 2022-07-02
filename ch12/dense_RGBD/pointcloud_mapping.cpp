@@ -101,7 +101,7 @@ int main(int argc, char **argv) {
     voxel_filter.filter(*tmp);
     tmp->swap(*pointCloud);
 
-    cout << "滤波之后，点云共有" << pointCloud->size() << "个点." << endl;
+   std:: cout << "there are total point after filtering: " << pointCloud->size() << "points" << endl;
 
     pcl::io::savePCDFileBinary("map.pcd", *pointCloud);
     return 0;

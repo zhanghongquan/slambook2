@@ -23,6 +23,8 @@ using namespace Eigen;
 
 using namespace cv;
 
+
+const float M_PI = 3.1415926;
 /**********************************************
 * 本程序演示了单目相机在已知轨迹下的稠密深度估计
 * 使用极线搜索 + NCC 匹配的方式，与书本的 12.2 节对应
@@ -286,6 +288,7 @@ bool update(const Mat &ref, const Mat &curr, const SE3d &T_C_R, Mat &depth, Mat 
             // 匹配成功，更新深度图
             updateDepthFilter(Vector2d(x, y), pt_curr, T_C_R, epipolar_direction, depth, depth_cov2);
         }
+    return true;
 }
 
 // 极线搜索

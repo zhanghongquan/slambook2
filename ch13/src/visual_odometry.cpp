@@ -16,8 +16,8 @@ bool VisualOdometry::Init() {
         return false;
     }
 
-    dataset_ =
-        Dataset::Ptr(new Dataset(Config::Get<std::string>("dataset_dir")));
+    //dataset_ =    Dataset::Ptr(new Dataset(Config::Get<std::string>("dataset_dir")));
+    dataset_ = Dataset::Ptr(new Dataset("D:/work/learn/ai/3d/slambook2/ch13/dataset/sequences/05"));
     CHECK_EQ(dataset_->Init(), true);
 
     // create components and links

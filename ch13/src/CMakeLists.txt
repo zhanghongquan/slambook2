@@ -13,3 +13,6 @@ add_library(myslam SHARED
 
 target_link_libraries(myslam
         ${THIRD_PARTY_LIBS})
+
+# set_property(TARGET myslam PROPERTY
+#  MSVC_RUNTIME_LIBRARY "MultiThreaded$<$<CONFIG:Debug>:Debug>")

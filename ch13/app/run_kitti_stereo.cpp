@@ -12,7 +12,9 @@ int main(int argc, char **argv) {
 
     myslam::VisualOdometry::Ptr vo(
         new myslam::VisualOdometry(FLAGS_config_file));
-    assert(vo->Init() == true);
+    if (!vo->Init()) {
+        std::cout << "failed to initialize" << std::endl;
+    }
     vo->Run();
 
     return 0;

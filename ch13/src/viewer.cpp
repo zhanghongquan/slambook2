@@ -5,6 +5,9 @@
 #include "myslam/feature.h"
 #include "myslam/frame.h"
 
+#include <cstdlib>
+#include<algorithm>
+#include <utility>
 #include <pangolin/pangolin.h>
 #include <opencv2/opencv.hpp>
 
@@ -71,7 +74,7 @@ void Viewer::ThreadLoop() {
         }
 
         pangolin::FinishFrame();
-        usleep(5000);
+        cv::waitKey(1);
     }
 
     LOG(INFO) << "Stop viewer";

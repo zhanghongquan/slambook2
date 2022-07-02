@@ -111,6 +111,7 @@ typedef Sophus::SO3d SO3;
 using cv::Mat;
 
 // glog
+#define GLOG_NO_ABBREVIATED_SEVERITIES
 #include <glog/logging.h>
 
 #endif  // MYSLAM_COMMON_INCLUDE_H

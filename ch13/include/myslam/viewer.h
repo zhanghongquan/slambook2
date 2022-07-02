@@ -5,7 +5,14 @@
 #ifndef MYSLAM_VIEWER_H
 #define MYSLAM_VIEWER_H
 
+#define NOMINMAX 
+#undef max
+#undef min
 #include <thread>
+#include <algorithm>
+#include <cstdlib>
+#include <utility>
+#include <limits>
 #include <pangolin/pangolin.h>
 
 #include "myslam/common_include.h"
